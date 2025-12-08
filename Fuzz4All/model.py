@@ -23,7 +23,11 @@ def get_ollama_model_name(model_name: str) -> str:
 def make_model(eos: list, model_name: str, device: str, max_length: int):
     if is_ollama_model(model_name):
         return None
+    elif "deepseek" in model_name.lower():
+        # New logic for DeepSeekCoder
+        return DeepSeekCoder(model_name, device, eos, max_length)
     else:
+        # Default fallback (original StarCoder logic)
         return StarCoder(model_name, device, eos, max_length)
 
 
@@ -71,6 +75,84 @@ class EndOfFunctionCriteria(StoppingCriteria):
         return all(done)
 
 
+class DeepSeekCoder:
+    """
+    Implementation for DeepSeekCoder models.
+    """
+    def __init__(
+        self, model_name: str, device: str, eos: List, max_length: int
+    ) -> None:
+        checkpoint = model_name
+        self.device = device
+        
+        # DeepSeek requires trust_remote_code=True
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            checkpoint,
+            trust_remote_code=True
+        )
+        
+        self.model = (
+            AutoModelForCausalLM.from_pretrained(
+                checkpoint,
+                trust_remote_code=True,
+                torch_dtype=torch.bfloat16, # DeepSeek works best with bfloat16
+            )
+            .to(device)
+        )
+        
+        self.eos = EOF_STRINGS + eos
+        self.max_length = max_length
+        self.skip_special_tokens = True 
+
+    @torch.inference_mode()
+    def generate(
+        self, prompt, batch_size=10, temperature=1.0, max_length=512
+    ) -> List[str]:
+        # DeepSeekCoder works well with standard completion, 
+        # so we pass the prompt directly without StarCoder's FIM tokens.
+        input_tokens = self.tokenizer.encode(prompt, return_tensors="pt").to(
+            self.device
+        )
+
+        scores = StoppingCriteriaList(
+            [
+                EndOfFunctionCriteria(
+                    start_length=len(input_tokens[0]),
+                    eos=self.eos,
+                    tokenizer=self.tokenizer,
+                )
+            ]
+        )
+
+        raw_outputs = self.model.generate(
+            input_tokens,
+            max_length=min(self.max_length, len(input_tokens[0]) + max_length),
+            do_sample=True,
+            top_p=0.95, # Adjusted for DeepSeek recommendations
+            temperature=max(temperature, 1e-2),
+            num_return_sequences=batch_size,
+            stopping_criteria=scores,
+            output_scores=True,
+            return_dict_in_generate=True,
+            repetition_penalty=1.0,
+            pad_token_id=self.tokenizer.eos_token_id,
+        )
+        
+        gen_seqs = raw_outputs.sequences[:, len(input_tokens[0]) :]
+        gen_strs = self.tokenizer.batch_decode(
+            gen_seqs, skip_special_tokens=self.skip_special_tokens
+        )
+        outputs = []
+        # removes eos tokens.
+        for output in gen_strs:
+            min_index = 10000
+            for eos in self.eos:
+                if eos in output:
+                    min_index = min(min_index, output.index(eos))
+            outputs.append(output[:min_index])
+        return outputs
+
+
 class StarCoder:
     def __init__(
         self, model_name: str, device: str, eos: List, max_length: int
@@ -97,6 +179,7 @@ class StarCoder:
     def generate(
         self, prompt, batch_size=10, temperature=1.0, max_length=512
     ) -> List[str]:
+        # StarCoder specific FIM (Fill-In-Middle) formatting
         input_str = self.prefix_token + prompt + self.suffix_token
         input_tokens = self.tokenizer.encode(input_str, return_tensors="pt").to(
             self.device
