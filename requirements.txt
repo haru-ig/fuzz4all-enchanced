@@ -1,6 +1,6 @@
 pre-commit
 rich
-openai
+openai==0.28.1
 tiktoken
 torch
 transformers
