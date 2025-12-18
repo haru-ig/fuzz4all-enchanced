@@ -24,7 +24,7 @@ def make_model(eos: list, model_name: str, device: str, max_length: int):
     if is_ollama_model(model_name):
         return None
     elif "deepseek" in model_name.lower():
-        # New logic for DeepSeekCoder
+        # New logic for DeepSeekCoder (Runs in 8-bit mode)
         return DeepSeekCoder(model_name, device, eos, max_length)
     else:
         # Default fallback (original StarCoder logic)
@@ -77,7 +77,8 @@ class EndOfFunctionCriteria(StoppingCriteria):
 
 class DeepSeekCoder:
     """
-    Implementation for DeepSeekCoder models.
+    Implementation for DeepSeekCoder models with 8-bit quantization.
+    Optimized for Tesla T4 (16GB VRAM).
     """
     def __init__(
         self, model_name: str, device: str, eos: List, max_length: int
@@ -85,20 +86,22 @@ class DeepSeekCoder:
         checkpoint = model_name
         self.device = device
         
-        # DeepSeek requires trust_remote_code=True
+        # DeepSeek tokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(
             checkpoint,
             trust_remote_code=True
         )
         
-        self.model = (
-            AutoModelForCausalLM.from_pretrained(
-                checkpoint,
-                trust_remote_code=True,
-                torch_dtype=torch.bfloat16, # DeepSeek works best with bfloat16
-            )
-            .to(device)
+        print(f"[INFO] Loading {checkpoint} in 8-bit mode...")
+        
+        # Load model in 8-bit to save ~7GB VRAM
+        self.model = AutoModelForCausalLM.from_pretrained(
+            checkpoint,
+            trust_remote_code=True,
+            load_in_8bit=True,   # Requires 'bitsandbytes' package
+            device_map="auto"    # Automatically handles GPU placement
         )
+        # Note: We do not call .to(device) because device_map handles it
         
         self.eos = EOF_STRINGS + eos
         self.max_length = max_length
@@ -108,8 +111,7 @@ class DeepSeekCoder:
     def generate(
         self, prompt, batch_size=10, temperature=1.0, max_length=512
     ) -> List[str]:
-        # DeepSeekCoder works well with standard completion, 
-        # so we pass the prompt directly without StarCoder's FIM tokens.
+        # DeepSeekCoder works well with standard completion
         input_tokens = self.tokenizer.encode(prompt, return_tensors="pt").to(
             self.device
         )
@@ -128,7 +130,7 @@ class DeepSeekCoder:
             input_tokens,
             max_length=min(self.max_length, len(input_tokens[0]) + max_length),
             do_sample=True,
-            top_p=0.95, # Adjusted for DeepSeek recommendations
+            top_p=0.95, 
             temperature=max(temperature, 1e-2),
             num_return_sequences=batch_size,
             stopping_criteria=scores,

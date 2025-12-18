@@ -22,7 +22,7 @@ fuzzing:
   # If flag not set then no evaluation will be done (Default: false)
   evaluate: false
   # use hand-written prompt to query the LLM model
-  use_hand_written_prompt: false
+  use_hand_written_prompt: true
   # whether to use only trigger_to_generate_input and input_hint, without the
   # any documentation information or example code
   no_input_prompt: false
@@ -68,7 +68,7 @@ llm:
   # INCREASED: DeepSeek-7B is half the size of StarCoderBase.
   # You can likely double the batch size (e.g., 30 -> 60) to speed up fuzzing.
   # If you get CUDA OOM errors, revert to 30.
-  batch_size: 60
+  batch_size: 5
   # use hardware acceleration (GPU) for the LLM model
   device: cuda
   # model name according to the HuggingFace model hub
@@ -83,4 +83,4 @@ llm:
   #   - "<|EOT|>"
   # maximum length of the generated llm output
   # INCREASED: DeepSeek supports 16K context. 2048 allows for richer, more complex test cases.
-  max_length: 2048
+  max_length: 1024
