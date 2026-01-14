@@ -33,6 +33,43 @@ def write_to_file(fo, file_name):
         pass
 
 
+# === NEW HELPER FUNCTION FOR SELF-CORRECTION ===
+def attempt_repair(target, code, error_msg):
+    """
+    Asks the LLM to fix the code based on the error message.
+    """
+    try:
+        # Construct a C-style prompt for repair
+        # We wrap the error in comments so the model understands context
+        prompt = (
+            f"/* The following C code failed to compile. */\n"
+            f"{code}\n\n"
+            f"/* The compiler output was: */\n"
+            f"/* {str(error_msg).strip()} */\n\n"
+            f"/* Please generate the fixed, complete C code below: */\n"
+        )
+
+        # Generate 1 repair candidate
+        # We use a slightly lower temperature (0.6) to encourage correctness over creativity
+        repairs = target.model.generate(
+            prompt, 
+            batch_size=1, 
+            temperature=0.6, 
+            max_length=1024
+        )
+        
+        if repairs and len(repairs) > 0:
+            return repairs[0]
+            
+    except Exception as e:
+        # If the model call fails for any reason, fail silently and return None
+        # print(f"[DEBUG] Repair failed: {e}")
+        pass
+    
+    return None
+# ===============================================
+
+
 def fuzz(
     target: Target,
     number_of_iterations: int,
@@ -79,13 +116,53 @@ def fuzz(
             for index, fo in enumerate(fos):
                 file_name = os.path.join(output_folder, f"{count}.fuzz")
                 write_to_file(fo, file_name)
-                count += 1
-                p.update(task, advance=1)
+                
+                # We need to increment count here normally, but wait...
+                # If we repair, we might want to overwrite or save as a variant.
+                # For simplicity, we overwrite the current slot if repair succeeds.
+                
                 # validation on the fly
+                f_result_final = None # Placeholder
                 if otf:
                     f_result, message = target.validate_individual(file_name)
+                    
+                    # === ALGORITHM CHANGE 1: SELF-CORRECTION LOGIC ===
+                    # Heuristic: If "error:" is in the message, it's a compile error.
+                    # We only fix compile errors, not runtime crashes (which are good bugs!).
+                    if "error:" in str(message).lower():
+                        # Try to repair
+                        repaired_code = attempt_repair(target, fo, message)
+                        
+                        if repaired_code:
+                            # Save repaired code to a .repaired file first
+                            file_name_repaired = file_name + ".repaired"
+                            write_to_file(repaired_code, file_name_repaired)
+                            
+                            # Validate the repaired code
+                            f_result_r, message_r = target.validate_individual(file_name_repaired)
+                            
+                            # If the repair fixed the compile error:
+                            if "error:" not in str(message_r).lower():
+                                # SUCCESS! Swap the bad code with the good code
+                                fo = repaired_code
+                                f_result = f_result_r
+                                message = message_r
+                                
+                                # Overwrite the original .fuzz file with the fixed version
+                                # This ensures the dataset contains the valid code
+                                write_to_file(fo, file_name)
+                    # =================================================
+                    
                     target.parse_validation_message(f_result, message, file_name)
                     prev.append((f_result, fo))
+                else:
+                    # If OTF is off, we can't validate, so we assume success for the loop
+                    # But typically OTF is True in your config.
+                    prev.append((None, fo))
+
+                count += 1
+                p.update(task, advance=1)
+                
             target.update(prev=prev)
 
 
