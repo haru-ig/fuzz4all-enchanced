@@ -1,0 +1,74 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    if (x == 0) {
+        goto error;
+    }
+    if (y == 0) {
+        goto error;
+    }
+    if (z == 0) {
+        goto error;
+    }
+    printf("Everything is OK\n");
+    return 0;
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+     
+     
+    if (x == 0 || y == 0 || z == 0) {
+        printf("Invalid operation!\n");
+        return 1;
+    }
+     
+    if (x == 1 && y == 1) {
+        printf("Warning: x and y are equal to 1!\n");
+    }
+     
+    for (int i = 0; i < 3; i++) {
+        printf("Outer loop iteration %d\n", i);
+         
+        for (int j = 0; j < 5; j++) {
+            printf("Inner loop iteration %d\n", j);
+             
+            if (j == 2) {
+                printf("Error at inner loop iteration %d\n", j);
+                continue;
+            }
+             
+        }
+    }
+     
+     
+    if (x == 0) {
+        printf("Invalid operation!\n");
+        return 1;
+    }
+     
+    if (y == 0) {
+        printf("Invalid operation!\n");
+        return 1;
+    }
+     
+    for (int i = 0; i < 3; i++) {
+        printf("Outer loop iteration %d\n", i);
+         
+        for (int j = 0; j < 5; j++) {
+            printf("Inner loop iteration %d\n", j);
+             
+            if (j == 2) {
+                printf("Error at inner loop iteration %d\n", j);
+                continue;
+            }
+             
+        }
+    }
+     
+    return 0;
+}
+*/

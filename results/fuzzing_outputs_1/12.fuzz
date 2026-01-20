@@ -1,0 +1,116 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {
+            goto error;
+        }
+        printf("Everything is OK\n");
+    } while (0);
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+
+/*  
+ 
+
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {
+            goto error;
+        }
+        printf("Everything is OK\n");
+    } while (0);
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+/* 25/03/2023 (09:48:20 PM)
+ 
+
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {
+            goto error;
+        }
+        printf("Everything is OK\n");
+    } while (0);
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+
+/*  
+
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {
+            goto error;
+        }
+        printf("Everything is OK\n");
+    } while (0);
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+
+/* 25/03/2023 (09:48:21 PM)
+ 
+
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {

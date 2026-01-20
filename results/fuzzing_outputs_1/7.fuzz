@@ -1,0 +1,104 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main(void)
+{
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {
+            goto error;
+        }
+        printf("Everything is OK\n");
+    } while (0);
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+
+}
+
+
+int main() {
+    int x = 10;
+    int y = 20;
+    int z = 0;
+
+     
+error:
+    printf("Error: Division by zero.\n");
+    return 0;
+}
+
+int main() {
+    int num = 42;
+
+     
+check:
+    if (num % 2 == 0) {
+        printf("%d is an even number.\n", num);
+        return 0;
+    } else {
+        printf("%d is an odd number.\n", num);
+        return 0;
+    }
+
+     
+exit:
+    printf("Program completed.\n");
+    return 0;
+}
+
+void errorHandler() {
+    printf("Error occurred!\n");
+     
+    goto exit;
+
+}
+
+int main() {
+    int x = 10;
+    int y = 0;
+
+     
+ifDiv:
+    if (y == 0) {
+        errorHandler();
+        goto ifDiv;  
+    }
+
+     
+exit:
+    printf("Program completed.\n");
+    return 0;
+}
+
+ 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int x = 0;
+    int y = 0;
+     
+
+     
+    if (errorFlag) {
+        goto errorHandler;  
+    }
+
+     
+
+     
+errorHandler:
+    printf("An error occurred!\n");
+    return -1;
+}
+*/

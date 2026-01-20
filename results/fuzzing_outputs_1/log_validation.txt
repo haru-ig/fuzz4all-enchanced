@@ -1,0 +1,350 @@
+[TRACE] Validating outputs/fuzzing_outputs/0.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/0.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/1.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/1.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/2.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/2.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/3.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/3.fuzz failed validation with error message: outputs/fuzzing_outputs/3.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/3.fuzz:12:5: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+   12 |     printf("Everything is OK\n");
+      |     ^~~~~~
+outputs/fuzzing_outputs/3.fuzz:12:5: warning: incompatible implicit declaration of built-in function ‘printf’
+outputs/fuzzing_outputs/3.fuzz:2:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+    1 | #include <stdlib.h>
+  +++ |+#include <stdio.h>
+    2 | int main(void)
+outputs/fuzzing_outputs/3.fuzz: At top level:
+outputs/fuzzing_outputs/3.fuzz:22:5: error: redefinition of ‘main’
+   22 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/3.fuzz:2:5: note: previous definition of ‘main’ was here
+    2 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/3.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/3.fuzz:32:5: warning: incompatible implicit declaration of built-in function ‘printf’
+   32 |     printf("Everything is OK\n");
+      |     ^~~~~~
+outputs/fuzzing_outputs/3.fuzz:32:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+outputs/fuzzing_outputs/3.fuzz: At top level:
+outputs/fuzzing_outputs/3.fuzz:42:5: error: redefinition of ‘main’
+   42 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/3.fuzz:2:5: note: previous definition of ‘main’ was here
+    2 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/3.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/3.fuzz:52:5: warning: incompatible implicit declaration of built-in function ‘printf’
+   52 |     printf("Everything is OK\n");
+      |     ^~~~~~
+outputs/fuzzing_outputs/3.fuzz:52:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+outputs/fuzzing_outputs/3.fuzz: At top level:
+outputs/fuzzing_outputs/3.fuzz:62:5: error: redefinition of ‘main’
+   62 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/3.fuzz:2:5: note: previous definition of ‘main’ was here
+    2 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/3.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/3.fuzz:72:5: warning: incompatible implicit declaration of built-in function ‘printf’
+   72 |     printf("Everything is OK\n");
+      |     ^~~~~~
+outputs/fuzzing_outputs/3.fuzz:72:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+outputs/fuzzing_outputs/3.fuzz: At top level:
+outputs/fuzzing_outputs/3.fuzz:83:5: error: redefinition of ‘main’
+   83 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/3.fuzz:2:5: note: previous definition of ‘main’ was here
+    2 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/3.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/3.fuzz:93:5: warning: incompatible implicit declaration of built-in function ‘printf’
+   93 |     printf("Everything is OK\n");
+      |     ^~~~~~
+outputs/fuzzing_outputs/3.fuzz:93:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+
+[TRACE] Validating outputs/fuzzing_outputs/4.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/4.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/5.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/5.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/6.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/6.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/7.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/7.fuzz failed validation with error message: outputs/fuzzing_outputs/7.fuzz:25:1: error: expected identifier or ‘(’ before ‘}’ token
+   25 | }
+      | ^
+outputs/fuzzing_outputs/7.fuzz:28:5: error: redefinition of ‘main’
+   28 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/7.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/7.fuzz:39:5: error: redefinition of ‘main’
+   39 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/7.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/7.fuzz: In function ‘errorHandler’:
+outputs/fuzzing_outputs/7.fuzz:61:5: error: label ‘exit’ used but not defined
+   61 |     goto exit;
+      |     ^~~~
+outputs/fuzzing_outputs/7.fuzz: At top level:
+outputs/fuzzing_outputs/7.fuzz:65:5: error: redefinition of ‘main’
+   65 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/7.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/7.fuzz:87:5: error: redefinition of ‘main’
+   87 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/7.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main(void)
+      |     ^~~~
+outputs/fuzzing_outputs/7.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/7.fuzz:93:9: error: ‘errorFlag’ undeclared (first use in this function)
+   93 |     if (errorFlag) {
+      |         ^~~~~~~~~
+outputs/fuzzing_outputs/7.fuzz:93:9: note: each undeclared identifier is reported only once for each function it appears in
+outputs/fuzzing_outputs/7.fuzz: At top level:
+outputs/fuzzing_outputs/7.fuzz:104:2: error: expected identifier or ‘(’ before ‘/’ token
+  104 | */
+      |  ^
+
+[TRACE] Validating outputs/fuzzing_outputs/8.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/8.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/9.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/9.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/10.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/10.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/11.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/11.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/12.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/12.fuzz failed validation with error message: outputs/fuzzing_outputs/12.fuzz:24:1: error: unterminated comment
+   24 | /*
+      | ^
+
+[TRACE] Validating outputs/fuzzing_outputs/13.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/13.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/14.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/14.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/15.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/15.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/16.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/16.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/17.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/17.fuzz failed validation with error message: outputs/fuzzing_outputs/17.fuzz:23:1: error: expected identifier or ‘(’ before ‘}’ token
+   23 | }
+      | ^
+
+[TRACE] Validating outputs/fuzzing_outputs/18.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/18.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/19.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/19.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/20.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/20.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/21.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/21.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/22.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/22.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/23.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/23.fuzz failed validation with error message: outputs/fuzzing_outputs/23.fuzz:24:2: error: #endif without #if
+   24 | #endif
+      |  ^~~~~
+outputs/fuzzing_outputs/23.fuzz:26:1: error: unterminated comment
+   26 | /*
+      | ^
+
+[TRACE] Validating outputs/fuzzing_outputs/24.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/24.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/25.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/25.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/26.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/26.fuzz failed validation with error message: outputs/fuzzing_outputs/26.fuzz:25:5: error: expected identifier or ‘(’ before ‘return’
+   25 |     return 0;
+      |     ^~~~~~
+outputs/fuzzing_outputs/26.fuzz:26:1: error: expected identifier or ‘(’ before ‘}’ token
+   26 | }
+      | ^
+outputs/fuzzing_outputs/26.fuzz:27:2: error: expected identifier or ‘(’ before ‘/’ token
+   27 | */
+      |  ^
+
+[TRACE] Validating outputs/fuzzing_outputs/27.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/27.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/28.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/28.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/29.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/29.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/30.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/30.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/31.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/31.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/32.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/32.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/33.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/33.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/34.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/34.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/35.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/35.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/36.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/36.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/37.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/37.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/38.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/38.fuzz failed validation with error message: outputs/fuzzing_outputs/38.fuzz:25:5: error: expected identifier or ‘(’ before ‘if’
+   25 |     if (x == 0) {
+      |     ^~
+outputs/fuzzing_outputs/38.fuzz:28:5: error: expected identifier or ‘(’ before ‘if’
+   28 |     if (y == 0) {
+      |     ^~
+outputs/fuzzing_outputs/38.fuzz:31:5: error: expected identifier or ‘(’ before ‘if’
+   31 |     if (z == 0) {
+      |     ^~
+outputs/fuzzing_outputs/38.fuzz:36:5: error: expected identifier or ‘(’ before ‘for’
+   36 |     for (int i = 0; i < 10; i++) {
+      |     ^~~
+outputs/fuzzing_outputs/38.fuzz:36:23: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘<’ token
+   36 |     for (int i = 0; i < 10; i++) {
+      |                       ^
+outputs/fuzzing_outputs/38.fuzz:36:30: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘++’ token
+   36 |     for (int i = 0; i < 10; i++) {
+      |                              ^~
+outputs/fuzzing_outputs/38.fuzz:44:13: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   44 |     end_loop:
+      |             ^
+outputs/fuzzing_outputs/38.fuzz:47:5: error: expected identifier or ‘(’ before ‘return’
+   47 |     return 0;
+      |     ^~~~~~
+outputs/fuzzing_outputs/38.fuzz:48:1: error: expected identifier or ‘(’ before ‘}’ token
+   48 | }
+      | ^
+
+[TRACE] Validating outputs/fuzzing_outputs/39.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/39.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/40.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/40.fuzz failed validation with error message: outputs/fuzzing_outputs/40.fuzz:23:5: error: redefinition of ‘main’
+   23 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/40.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/40.fuzz:43:5: error: redefinition of ‘main’
+   43 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/40.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/40.fuzz:66:5: error: redefinition of ‘main’
+   66 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/40.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+
+[TRACE] Validating outputs/fuzzing_outputs/41.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/41.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/42.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/42.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/43.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/43.fuzz failed validation with error message: outputs/fuzzing_outputs/43.fuzz:24:5: error: expected identifier or ‘(’ before ‘if’
+   24 |     if (x == 0 || y == 0 || z == 0) {
+      |     ^~
+outputs/fuzzing_outputs/43.fuzz:29:5: error: expected identifier or ‘(’ before ‘if’
+   29 |     if (x == 1 && y == 1) {
+      |     ^~
+outputs/fuzzing_outputs/43.fuzz:33:5: error: expected identifier or ‘(’ before ‘for’
+   33 |     for (int i = 0; i < 3; i++) {
+      |     ^~~
+outputs/fuzzing_outputs/43.fuzz:33:23: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘<’ token
+   33 |     for (int i = 0; i < 3; i++) {
+      |                       ^
+outputs/fuzzing_outputs/43.fuzz:33:29: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘++’ token
+   33 |     for (int i = 0; i < 3; i++) {
+      |                             ^~
+outputs/fuzzing_outputs/43.fuzz:48:5: error: expected identifier or ‘(’ before ‘if’
+   48 |     if (x == 0) {
+      |     ^~
+outputs/fuzzing_outputs/43.fuzz:53:5: error: expected identifier or ‘(’ before ‘if’
+   53 |     if (y == 0) {
+      |     ^~
+outputs/fuzzing_outputs/43.fuzz:58:5: error: expected identifier or ‘(’ before ‘for’
+   58 |     for (int i = 0; i < 3; i++) {
+      |     ^~~
+outputs/fuzzing_outputs/43.fuzz:58:23: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘<’ token
+   58 |     for (int i = 0; i < 3; i++) {
+      |                       ^
+outputs/fuzzing_outputs/43.fuzz:58:29: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘++’ token
+   58 |     for (int i = 0; i < 3; i++) {
+      |                             ^~
+outputs/fuzzing_outputs/43.fuzz:72:5: error: expected identifier or ‘(’ before ‘return’
+   72 |     return 0;
+      |     ^~~~~~
+outputs/fuzzing_outputs/43.fuzz:73:1: error: expected identifier or ‘(’ before ‘}’ token
+   73 | }
+      | ^
+outputs/fuzzing_outputs/43.fuzz:74:2: error: expected identifier or ‘(’ before ‘/’ token
+   74 | */
+      |  ^
+
+[TRACE] Validating outputs/fuzzing_outputs/44.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/44.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/45.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/45.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/46.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/46.fuzz failed validation with error message: outputs/fuzzing_outputs/46.fuzz:25:8: error: expected declaration specifiers or ‘...’ before string constant
+   25 | printf("error!\n");
+      |        ^~~~~~~~~~
+outputs/fuzzing_outputs/46.fuzz:26:1: error: expected identifier or ‘(’ before ‘return’
+   26 | return 0;
+      | ^~~~~~
+outputs/fuzzing_outputs/46.fuzz:27:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   27 | error:
+      |      ^
+outputs/fuzzing_outputs/46.fuzz:29:5: error: expected identifier or ‘(’ before ‘return’
+   29 |     return 0;
+      |     ^~~~~~
+outputs/fuzzing_outputs/46.fuzz:30:1: error: expected identifier or ‘(’ before ‘}’ token
+   30 | }
+      | ^
+outputs/fuzzing_outputs/46.fuzz:34:5: error: redefinition of ‘main’
+   34 | int main(int argc, char *argv[]) {
+      |     ^~~~
+outputs/fuzzing_outputs/46.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/46.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/46.fuzz:38:5: error: expected expression at end of input
+   38 |     int x = atoi(argv[
+      |     ^~~
+outputs/fuzzing_outputs/46.fuzz:38:5: error: expected declaration or statement at end of input
+outputs/fuzzing_outputs/46.fuzz:36:9: error: label ‘error’ used but not defined
+   36 |         goto error;
+      |         ^~~~
+
+[TRACE] Validating outputs/fuzzing_outputs/47.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/47.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/48.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/48.fuzz failed validation with error message: outputs/fuzzing_outputs/48.fuzz:23:5: error: redefinition of ‘main’
+   23 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/48.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/48.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/48.fuzz:30:9: error: ‘error_condition’ undeclared (first use in this function)
+   30 |     if (error_condition) {
+      |         ^~~~~~~~~~~~~~~
+outputs/fuzzing_outputs/48.fuzz:30:9: note: each undeclared identifier is reported only once for each function it appears in
+outputs/fuzzing_outputs/48.fuzz:51:5: error: label at end of compound statement
+   51 |     error:
+      |     ^~~~~
+outputs/fuzzing_outputs/48.fuzz: At top level:
+outputs/fuzzing_outputs/48.fuzz:56:2: error: expected identifier or ‘(’ before ‘/’ token
+   56 | */
+      |  ^
+
+[TRACE] Validating outputs/fuzzing_outputs/49.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/49.fuzz is safe

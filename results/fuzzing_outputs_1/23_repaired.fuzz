@@ -1,0 +1,100 @@
+
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {
+            goto error;
+        }
+        printf("Everything is OK\n");
+    } while (1);
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+
+/*
+
+/* The fixed C code is: */
+
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {
+            goto error;
+        }
+        printf("Everything is OK\n");
+    } while (1);
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+
+/* The compiler output was: */
+/* outputs/fuzzing_outputs/23.fuzz:24:2: error: #endif without #if
+   24 | #endif
+      |  ^~~~~
+outputs/fuzzing_outputs/23.fuzz:26:1: error: unterminated comment
+   26 | /*
+      | ^ */
+
+/* Please generate the fixed, complete C code below: */
+
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {
+            goto error;
+        }
+        printf("Everything is OK\n");
+    } while (1);
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+
+/*
+
+/* The fixed C code is: */
+
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+   

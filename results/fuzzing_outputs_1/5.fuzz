@@ -1,0 +1,13 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main(void)
+{
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    if (x == 0 || y == 0 || z == 0)
+        printf("Something's wrong");
+    else
+        printf("Everything is OK");
+    return 0;
+}

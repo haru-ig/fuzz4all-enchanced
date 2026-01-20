@@ -1,0 +1,22 @@
+
+#include <stdio.h>
+int main(void)
+{
+    int x, y, z;
+    x = y = z = 0;
+    do
+    {
+        if (x == 0)
+            goto error;
+        if (y == 0)
+            goto error;
+        if (z == 0)
+            goto error;
+        printf("Everything is OK\n");
+    }
+    while (0);
+error:
+    printf("Something's wrong");
+    return 0;
+}
+

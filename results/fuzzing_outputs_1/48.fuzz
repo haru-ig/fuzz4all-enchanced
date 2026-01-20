@@ -1,0 +1,56 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    if (x == 0) {
+        goto error;
+    }
+    if (y == 0) {
+        goto error;
+    }
+    if (z == 0) {
+        goto error;
+    }
+    printf("Everything is OK\n");
+    return 0;
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+
+int main() {
+     
+     
+     
+     
+
+     
+    if (error_condition) {
+        goto error;
+    }
+
+     
+     
+
+     
+    outer_loop:
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("i = %d, j = %d\n", i, j);
+            if (i == 2 && j == 1) {
+                goto outer_loop;
+            }
+        }
+    }
+
+     
+    return 0;
+
+    error:
+     
+     
+}
+
+*/

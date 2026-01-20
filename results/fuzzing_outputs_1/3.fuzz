@@ -1,0 +1,103 @@
+#include <stdlib.h>
+int main(void)
+{
+    int x, y, z;
+    x = y = z = 0;
+    if (x == 0)
+        goto error;
+    if (y == 0)
+        goto error;
+    if (z == 0)
+        goto error;
+    printf("Everything is OK\n");
+    goto done;
+error:
+    printf("Something's wrong\n");
+    goto error;
+done:
+    return 0;
+}
+ 
+#include <stdlib.h>
+int main(void)
+{
+    int x, y, z;
+    x = y = z = 0;
+    if (x == 0)
+        goto error;
+    if (y == 0)
+        goto error;
+    if (z == 0)
+        goto error;
+    printf("Everything is OK\n");
+    goto done;
+error:
+    printf("Something's wrong\n");
+    goto error;
+done:
+    return 0;
+}
+ 
+#include <stdlib.h>
+int main(void)
+{
+    int x, y, z;
+    x = y = z = 0;
+    if (x == 0)
+        goto error;
+    if (y == 0)
+        goto error;
+    if (z == 0)
+        goto error;
+    printf("Everything is OK\n");
+    goto done;
+error:
+    printf("Something's wrong\n");
+    goto error;
+done:
+    return 0;
+}
+ 
+#include <stdlib.h>
+int main(void)
+{
+    int x, y, z;
+    x = y = z = 0;
+    if (x == 0)
+        goto error;
+    if (y == 0)
+        goto error;
+    if (z == 0)
+        goto error;
+    printf("Everything is OK\n");
+    goto done;
+error:
+    printf("Something's wrong\n");
+    goto error;
+done:
+    return 0;
+}
+
+ 
+#include <stdlib.h>
+int main(void)
+{
+    int x, y, z;
+    x = y = z = 0;
+    if (x == 0)
+        goto error;
+    if (y == 0)
+        goto error;
+    if (z == 0)
+        goto error;
+    printf("Everything is OK\n");
+    goto done;
+error:
+    printf("Something's wrong\n");
+    goto error;
+done:
+    return 0;
+}
+
+
+

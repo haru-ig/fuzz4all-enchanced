@@ -1,0 +1,21 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    if (x == 0) {
+        goto error;
+    }
+    if (y == 0) {
+        goto error;
+    }
+    if (z == 0) {
+        goto error;
+    }
+    printf("Everything is OK\n");
+    return 0;
+error:
+    printf("Something's wrong\n");
+    return 0;
+}

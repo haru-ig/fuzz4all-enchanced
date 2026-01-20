@@ -1,0 +1,64 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {
+            goto error;
+        }
+        printf("Everything is OK\n");
+    } while (1);
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+#endif
+
+/*  
+ 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+
+     
+    if (x > 0) {
+        if (y > 0) {
+            if (z > 0) {
+                printf("Everything is OK\n");
+            }
+            else {
+                goto error;
+            }
+        }
+        else {
+            goto error;
+        }
+    }
+    else {
+        goto error;
+    }
+
+     
+
+    return 0;
+
+     
+error:
+    printf("Something's wrong\n");
+    return 1;
+}
+

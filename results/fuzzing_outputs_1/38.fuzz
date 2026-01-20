@@ -1,0 +1,48 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    if (x == 0) {
+        goto error;
+    }
+    if (y == 0) {
+        goto error;
+    }
+    if (z == 0) {
+        goto error;
+    }
+    printf("Everything is OK\n");
+    return 0;
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+
+
+ 
+    if (x == 0) {
+        goto error;
+    }
+    if (y == 0) {
+        goto error;
+    }
+    if (z == 0) {
+        goto error;
+    }
+
+     
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (i == 5 && j == 5) {
+                goto end_loop;
+            }
+            printf("i: %d, j: %d\n", i, j);
+        }
+    }
+    end_loop:
+    printf("i: 5, j: 5\n");
+
+    return 0;
+}

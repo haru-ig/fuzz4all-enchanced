@@ -1,0 +1,31 @@
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    
+    do {
+        if (x == 0) {
+            goto error;
+        }
+        if (y == 0) {
+            goto error;
+        }
+        if (z == 0) {
+            goto error;
+        }
+        printf("Everything is OK\n");
+    } while (0);
+    
+error:
+    printf("Something's wrong\n");
+    return 0;
+}
+
+
+/* Write a one-sentence human-readable explanation of why your program is correct. */
+
+/* The program is correct because it checks if the values of x, y and z are not equal to 0. If they are not equal to 0, the program prints "Everything is OK". If they are equal to 0, the program jumps to the "error" label and prints "Something's wrong". The "do" loop is used to ensure that the program checks the values of x, y and z even if they are equal to 0. */
