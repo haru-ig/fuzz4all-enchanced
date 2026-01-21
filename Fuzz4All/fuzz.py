@@ -54,8 +54,9 @@ def attempt_repair(target, code, error_msg):
         repairs = target.model.generate(
             prompt,
             batch_size=1,
-            temperature=0.6,
+            temperature=0.4,
             max_length=1024
+            pad_token_id=tokenizer.eos_token_i # distinct pad token usually helps
         )
 
         if repairs and len(repairs) > 0:
@@ -131,6 +132,7 @@ def fuzz(
                     # We only fix compile errors, not runtime crashes (which are good bugs!).
                     if "error:" in str(message).lower():
                         # Try to repair
+                        print(f"[INFO] Iteration {count}.fuzz failed initially. Attempting repair...")
                         repaired_code = attempt_repair(target, fo, message)
 
                         if repaired_code:
@@ -143,6 +145,10 @@ def fuzz(
 
                             # If the repair fixed the compile error:
                             if "error:" not in str(message_r).lower():
+                                #first, save the original code with a different name with error messages as well.
+                                file_name_errors = file_name.replace(".fuzz", ".errors")
+                                write_to_file(fo + "\n----------ERROR MESSAGE BELOW----------\n" + message, file_name_errors)
+
                                 # SUCCESS! Swap the bad code with the good code
                                 fo = repaired_code
                                 f_result = f_result_r

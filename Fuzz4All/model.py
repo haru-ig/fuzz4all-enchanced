@@ -85,15 +85,15 @@ class DeepSeekCoder:
     ) -> None:
         checkpoint = model_name
         self.device = device
-        
+
         # DeepSeek tokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(
             checkpoint,
             trust_remote_code=True
         )
-        
+
         print(f"[INFO] Loading {checkpoint} in 8-bit mode...")
-        
+
         # Load model in 8-bit to save ~7GB VRAM
         self.model = AutoModelForCausalLM.from_pretrained(
             checkpoint,
@@ -102,10 +102,10 @@ class DeepSeekCoder:
             device_map="auto"    # Automatically handles GPU placement
         )
         # Note: We do not call .to(device) because device_map handles it
-        
+
         self.eos = EOF_STRINGS + eos
         self.max_length = max_length
-        self.skip_special_tokens = True 
+        self.skip_special_tokens = True
 
     @torch.inference_mode()
     def generate(
@@ -130,7 +130,7 @@ class DeepSeekCoder:
             input_tokens,
             max_length=min(self.max_length, len(input_tokens[0]) + max_length),
             do_sample=True,
-            top_p=0.95, 
+            top_p=0.95,
             temperature=max(temperature, 1e-2),
             num_return_sequences=batch_size,
             stopping_criteria=scores,
@@ -139,7 +139,7 @@ class DeepSeekCoder:
             repetition_penalty=1.0,
             pad_token_id=self.tokenizer.eos_token_id,
         )
-        
+
         gen_seqs = raw_outputs.sequences[:, len(input_tokens[0]) :]
         gen_strs = self.tokenizer.batch_decode(
             gen_seqs, skip_special_tokens=self.skip_special_tokens
