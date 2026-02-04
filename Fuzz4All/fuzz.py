@@ -53,7 +53,7 @@ def attempt_repair(target, code, error_msg):
         # We use a slightly lower temperature (0.6) to encourage correctness over creativity
         repairs = target.model.generate(
             prompt,
-            batch_size=1,
+            batch_size=5,
             temperature=0.4,
             max_length=1024,
             pad_token_id=target.tokenizer.eos_token_id # distinct pad token usually helps
@@ -67,6 +67,7 @@ def attempt_repair(target, code, error_msg):
         # print(f"[DEBUG] Repair failed: {e}")
         # If the model call fails, print the error so we know why!
         print(f"[DEBUG] Repair failed: {e}")
+        pass
 
     return None
 # ===============================================
