@@ -33,45 +33,48 @@ def write_to_file(fo, file_name):
         pass
 
 
-# === NEW HELPER FUNCTION FOR SELF-CORRECTION ===
 def attempt_repair(target, code, error_msg):
     """
     Asks the LLM to fix the code based on the error message.
     """
     try:
-        # Construct a C-style prompt for repair
-        # We wrap the error in comments so the model understands context
+        # 1. DYNAMIC LANGUAGE SUPPORT
+        # Use target.language (e.g., "c", "cpp", "java") to guide the model.
+        lang = target.language if hasattr(target, "language") else "code"
+
+        # 2. LANGUAGE-AWARE COMMENTING
+        # (Optional: You could check lang to decide between //, #, or /* */)
+        # For C/C++/Java, /* */ is safe.
+
         prompt = (
-            f"/* The following C code failed to compile. */\n"
+            f"/* The following {lang} code failed to compile. */\n"
             f"{code}\n\n"
             f"/* The compiler output was: */\n"
             f"/* {str(error_msg).strip()} */\n\n"
-            f"/* Please generate the fixed, complete C code below: */\n"
+            f"/* Please generate the fixed, complete {lang} code below: */\n"
         )
 
-        # Generate 1 repair candidate
-        # We use a slightly lower temperature (0.6) to encourage correctness over creativity
+        # 3. INCREASED BATCH SIZE
+        # Generating 5 candidates significantly increases the chance of a valid fix.
         repairs = target.model.generate(
             prompt,
             batch_size=5,
             temperature=0.4,
-            max_length=1024,
-            pad_token_id=target.tokenizer.eos_token_id # distinct pad token usually helps
+            max_length=1024 + len(prompt), # Ensure room for the prompt + code
+            # pad_token_id handled inside model.generate usually, but passing it is fine
         )
 
-        if repairs and len(repairs) > 0:
-            return repairs[0]
+        # 4. FILTERING
+        # We need to return the first non-empty repair.
+        # Ideally, we would validate them all, but returning the list
+        # to the caller to validate is better structure.
+        # For now, we return the list of candidates.
+        return repairs if repairs else []
 
     except Exception as e:
-        # If the model call fails for any reason, fail silently and return None
-        # print(f"[DEBUG] Repair failed: {e}")
-        # If the model call fails, print the error so we know why!
         print(f"[DEBUG] Repair failed: {e}")
-        pass
 
-    return None
-# ===============================================
-
+    return []
 
 def fuzz(
     target: Target,
