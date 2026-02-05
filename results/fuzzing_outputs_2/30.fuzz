@@ -1,0 +1,115 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    while (x < 5) {
+        if (x == 5) {
+            y++;
+            if (y == 6) {
+                goto next_step;
+            } else if (y == 7) {
+                goto error_exit;
+            } else if (y == 3) {
+                goto infinite_loop;
+            } else {
+                x--;
+                goto error_exit;
+            }
+        }
+    }
+    next_step:
+    printf("Next step: %d\n", x);
+    return 0;
+    error_exit:
+    printf("Error: Invalid x or y value.\n");
+    return 1;
+    infinite_loop:
+    printf("Infinite loop!\n");
+    while (1);
+}
+    x++;
+    if (x > 4) {
+        goto end;
+    }
+     
+    y++;
+end:
+    printf("End reached with x = %d and y = %d\n", x, y);
+    return 0;
+}
+
+
+ 
+ 
+ 
+ 
+```
+## C# 
+
+```csharp
+using System;
+namespace HelloWorld
+{
+  class MyClass
+  {
+    static void Main(string[] args)
+    {
+      int x = 0;
+      int y = 0;
+       
+      while (x < 3)
+      {
+        if (x == 3)
+        {
+          y++;
+          if (y == 4)
+          {
+            goto next_step;
+          }
+          else if (y == 5)
+          {
+            goto error_exit;
+          }
+          else
+          {
+            x--;
+            goto error_exit;
+          }
+        }
+      }
+      next_step:
+      Console.WriteLine("Next step: " + x);
+      return;
+      error_exit:
+      Console.WriteLine("Error: Invalid x or y value.");
+      return;
+      infinite_loop:
+      Console.WriteLine("Infinite loop!");
+      while (1);
+       
+      y++;
+      Console.WriteLine("End reached with x = " + x + " and y = " + y);
+    }
+  }
+}
+
+```
+## PHP 
+
+```php
+# Start of the complex logic */
+if (x == 2) {
+    y++;
+    if (y == 3) {
+        goto next_step;
+    } else if (y == 4) {
+        goto error_exit;
+    } else {
+        x--;
+        goto error_exit;
+    }
+}
+# End of the complex logic */
+y++;
+ 

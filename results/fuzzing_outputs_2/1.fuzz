@@ -1,0 +1,35 @@
+#include <stdlib.h>
+
+
+ 
+int perform_action(char *action) {
+    if (strcmp(action, "quit") == 0) {
+         
+        exit(EXIT_SUCCESS);
+    } else if (strcmp(action, "show") == 0) {
+         
+        printf("This is a message.\n");
+    } else {
+         
+        return -1;
+    }
+
+     
+    return 0;
+}
+
+int main() {
+    while (1) {
+        char action[10];
+        printf("Enter action (quit, show, or other): ");
+        scanf("%s", action);
+
+        if (perform_action(action) != 0) {
+             
+            printf("Invalid action, please try again.\n");
+        }
+    }
+
+    return 0;
+}
+}

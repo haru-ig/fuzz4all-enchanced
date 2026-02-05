@@ -1,0 +1,27 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    if (x != 5) {
+        if (y != 5) {
+            if (x != 5) {
+                if (y != 6) {
+                    if (x != 5) {
+                        if (y != 2) {
+                            printf("Invalid x or y value.\n");
+                            return 1;
+                        } else {
+                            printf("Infinite loop!\n");
+                            while (1);
+                        }
+                    }
+                }
+            } else {
+                printf("Next step: %d\n", x);
+                return 0;
+            }
+        }
+    }
+}
+ 

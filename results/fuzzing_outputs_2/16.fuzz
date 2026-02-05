@@ -1,0 +1,26 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    do {
+        if (x == 4) {
+            y++;
+            if (y == 5) {
+                break;
+            } else if (y == 6) {
+                break;
+            } else if (y == 2) {
+                while (1);
+            } else {
+                x--;
+                break;
+            }
+        }
+    } while (x < 4);
+    printf("Next step: %d\n", x);
+    return 0;
+    printf("Error: Invalid x or y value.\n");
+    return 1;
+    while (1);
+}

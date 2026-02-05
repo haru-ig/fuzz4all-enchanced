@@ -1,0 +1,44 @@
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+     
+     
+    if (argc < 4)
+    {
+        fprintf(stderr, "usage: myprogram <num> <num> <operation> (add | sub | mul | div)\n");
+        exit(1);
+    }
+    int num1 = atoi(argv[1]);
+    int num2 = atoi(argv[2]);
+    char *operation = argv[3];
+
+    if (strcmp(operation, "add") == 0)
+    {
+        printf("%d\n", num1 + num2);
+    }
+    else if (strcmp(operation, "sub") == 0)
+    {
+        printf("%d\n", num1 - num2);
+    }
+    else if (strcmp(operation, "mul") == 0)
+    {
+        printf("%d\n", num1 * num2);
+    }
+    else if (strcmp(operation, "div") == 0)
+    {
+        if (num2 == 0)
+        {
+            fprintf(stderr, "Error: division by zero\n");
+            exit(2);
+        }
+        printf("%d\n", num1 / num2);
+    }
+    else
+    {
+        fprintf(stderr, "Error: invalid operation\n");
+        exit(3);
+    }
+
+    return 0;
+}

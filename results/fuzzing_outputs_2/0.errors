@@ -1,0 +1,80 @@
+#include <stdlib.h>
+
+
+int main() {
+    int* arr;
+    int size = 5;
+    int i;
+
+     
+    arr = (int*)malloc(size * sizeof(int));
+    if (arr == NULL) {
+        printf("Error: Memory allocation failed!\n");
+        return 1;
+    }
+
+     
+    for (i = 0; i < size; i++) {
+        arr[i] = 0;
+    }
+
+     
+    free(arr);
+
+    return 0;
+}
+
+ 
+}
+ 
+     
+    if (x == 0 && y == 0) {
+        goto error;  
+    }
+     
+ 
+
+ 
+error:
+    printf("Error: x and y cannot be both zero!\n");
+    return 1;  
+
+ 
+exit:
+    printf("End of program\n");
+    return 0;  
+}
+ 
+
+----------ERROR MESSAGE BELOW----------
+outputs/fuzzing_outputs/0.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/0.fuzz:12:9: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+   12 |         printf("Error: Memory allocation failed!\n");
+      |         ^~~~~~
+outputs/fuzzing_outputs/0.fuzz:12:9: warning: incompatible implicit declaration of built-in function ‘printf’
+outputs/fuzzing_outputs/0.fuzz:2:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+    1 | #include <stdlib.h>
+  +++ |+#include <stdio.h>
+    2 | 
+outputs/fuzzing_outputs/0.fuzz: At top level:
+outputs/fuzzing_outputs/0.fuzz:28:1: error: expected identifier or ‘(’ before ‘}’ token
+   28 | }
+      | ^
+outputs/fuzzing_outputs/0.fuzz:31:5: error: expected identifier or ‘(’ before ‘if’
+   31 |     if (x == 0 && y == 0) {
+      |     ^~
+outputs/fuzzing_outputs/0.fuzz:38:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   38 | error:
+      |      ^
+outputs/fuzzing_outputs/0.fuzz:40:5: error: expected identifier or ‘(’ before ‘return’
+   40 |     return 1;
+      |     ^~~~~~
+outputs/fuzzing_outputs/0.fuzz:43:5: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   43 | exit:
+      |     ^
+outputs/fuzzing_outputs/0.fuzz:45:5: error: expected identifier or ‘(’ before ‘return’
+   45 |     return 0;
+      |     ^~~~~~
+outputs/fuzzing_outputs/0.fuzz:46:1: error: expected identifier or ‘(’ before ‘}’ token
+   46 | }
+      | ^

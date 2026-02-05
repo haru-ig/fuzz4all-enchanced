@@ -1,0 +1,59 @@
+#include <stdlib.h>
+
+
+int main() {
+    int x = 0;
+    int y = 0;
+     
+    do {
+        if (x == 3) {
+            y++;
+            if (y == 4) {
+                goto next_step;
+            } else if (y == 5) {
+                goto error_exit;
+            } else if (y == 3) {
+                goto infinite_loop;
+            } else {
+                x--;
+                goto error_exit;
+            }
+        }
+    } while (x < 5);
+
+    next_step:
+    printf("Next step: %d\n", x);
+    return 0;
+
+    error_exit:
+    printf("Error: Invalid x or y value.\n");
+    return 1;
+
+    infinite_loop:
+    printf("Infinite loop!\n");
+    while (1);
+}
+ 
+
+return 0;
+} */
+----------ERROR MESSAGE BELOW----------
+outputs/fuzzing_outputs/8.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/8.fuzz:25:5: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+   25 |     printf("Next step: %d\n", x);
+      |     ^~~~~~
+outputs/fuzzing_outputs/8.fuzz:25:5: warning: incompatible implicit declaration of built-in function ‘printf’
+outputs/fuzzing_outputs/8.fuzz:2:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+    1 | #include <stdlib.h>
+  +++ |+#include <stdio.h>
+    2 | 
+outputs/fuzzing_outputs/8.fuzz: At top level:
+outputs/fuzzing_outputs/8.fuzz:38:1: error: expected identifier or ‘(’ before ‘return’
+   38 | return 0;
+      | ^~~~~~
+outputs/fuzzing_outputs/8.fuzz:39:1: error: expected identifier or ‘(’ before ‘}’ token
+   39 | } */
+      | ^
+outputs/fuzzing_outputs/8.fuzz:39:4: error: expected identifier or ‘(’ before ‘/’ token
+   39 | } */
+      |    ^

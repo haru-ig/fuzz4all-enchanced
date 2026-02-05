@@ -1,0 +1,54 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int error = 0;
+     
+    if (x == 4 && y == 5) {
+        error = 1;
+    }
+    if (error == 0) {
+        printf("Error: Invalid x or y value.\n");
+    } else {
+        printf("Success: Program ended without errors.\n");
+    }
+    return 0;
+}
+
+ 
+
+ 
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+     
+    #ifdef BAD
+        #define BAD
+    #endif
+     
+    #ifndef BAD
+        #define BAD
+    #endif
+    return 0;
+}
+
+#ifndef BAD
+    #define BAD
+#endif
+
+int main() {
+    int x = 0;
+    int y = 0;
+     
+    #ifdef BAD
+        #define BAD
+    #endif
+     
+    #ifndef BAD
+        #define BAD
+    #endif
+    return 0;
+}

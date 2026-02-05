@@ -1,0 +1,33 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    while (x < 4) {
+        if (x == 4) {
+            y++;
+            if (y == 5) {
+                goto next_step;
+            } else if (y == 6) {
+                goto error_exit;
+            } else if (y == 2) {
+                goto infinite_loop;
+            } else {
+                x--;
+                goto error_exit;
+            }
+        }
+    }
+    next_step:
+    printf("Next step: %d\n", x);
+    return 0;
+    error_exit:
+    printf("Error: Invalid x or y value.\n");
+    return 1;
+    infinite_loop:
+    printf("Infinite loop!\n");
+    while (1);
+}
+
+ 
+This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.

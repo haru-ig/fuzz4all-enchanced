@@ -1,0 +1,41 @@
+/* 
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+    int x = 0;
+    int y = 0;
+    int step = 0;
+    while (x < 4) {
+        switch (step) {
+            case 0:
+                y = y + 1;
+                if (y == 5) {
+                    step++;
+                } else if (y == 6) {
+                    goto error_exit;
+                } else {
+                    x = x - 1;
+                    goto error_exit;
+                }
+                break;
+            case 1:
+                goto error_exit;
+            case 2:
+                goto infinite_loop;
+        }
+        if (step == 0) {
+            step++;
+        }
+    }
+    next_step:
+    printf("Next step: %d\n", x);
+    return 0;
+    error_exit:
+    printf("Error: Invalid x or y value.\n");
+    return 1;
+    infinite_loop:
+    printf("Infinite loop!\n");
+    while (1);
+}
+
+ */

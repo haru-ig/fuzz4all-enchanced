@@ -1,0 +1,129 @@
+#include <stdlib.h>
+
+#include <stdio.h>
+int main(void) {
+ 
+    for (int i = 0; i <= 10; i += 2) {
+        printf("%d ", i);
+         
+        if (i == 6) {
+            continue;
+        }
+         
+        for (int j = 0; j <= 10; j++) {
+            if (j == 5) {
+                continue;
+            }
+        }
+        printf("Loop count: %d\n", i);
+    }
+ 
+    for (int i = 0; i <= 10; i++) {
+        if (i == 5) {
+            break;
+        }
+ 
+        for (int j = 0; j <= 10; j++) {
+            if (j == 5) {
+                break;
+            }
+        }
+    }
+ 
+    for (int i = 0; i <= 10; i++) {
+        if (i == 6) {
+            continue;
+        }
+        if (i == 8) {
+            continue;
+        }
+    }
+ 
+    int num = 1;
+    if (num == 1) {
+        goto label1;
+    }
+     
+label1:
+     
+    num = 0;
+    while (num < 10) {
+        printf("Iteration %d\n", num);
+        num++;
+        if (num == 5) {
+            goto label2;
+        }
+    }
+ 
+label2:
+     
+    if (num > 10) {
+        break;
+    }
+     
+    for (int i = 0; i <= 10; i++) {
+        if (i == 6) {
+            goto label3;
+        }
+    }
+ 
+label3:
+ 
+    for (int i = 0; i < 10; i += 2) {
+        if (i == 6) {
+            break;
+        }
+    }
+ 
+label4:
+     
+    num = 0;
+    while (num < 10) {
+        printf("Iteration %d\n", num);
+        num++;
+        if (num == 5) {
+            goto label5;
+        }
+    }
+ 
+label5:
+     
+    if (num > 10) {
+        break;
+    }
+     
+    for (int i = 0; i < 10; i += 2) {
+        if (i == 6) {
+            goto label6;
+        }
+    }
+ 
+label6:
+     
+    num = 0;
+    while (num < 10) {
+        printf("Iteration %d\n", num);
+        num++;
+        if (num == 5) {
+            goto label7;
+        }
+    }
+ 
+label7:
+     
+    if (num > 10) {
+        break;
+    }
+     
+    for (int i = 0; i < 10; i++) {
+        if (i == 6) {
+            goto label8;
+        }
+    }
+ 
+label8:
+     
+    num = 0;
+    while (num < 10) {
+        printf("Iteration %d\n", num);
+        num++;

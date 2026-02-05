@@ -1,0 +1,28 @@
+#include <stdlib.h>
+
+
+int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <num>\n", argv[0]);
+        return EXIT_FAILURE;
+    }
+
+    int num = atoi(argv[1]);
+    if (num <= 0) {
+        fprintf(stderr, "Error: Invalid input. Enter a positive integer.\n");
+        return EXIT_FAILURE;
+    }
+
+    int sum = 0;
+    for (int i = 1; i <= num; i++) {
+        if (i % 2 == 0) {
+            sum += i;
+        }
+    }
+
+    printf("Sum of even numbers from 1 to %d: %d\n", num, sum);
+
+    return EXIT_SUCCESS;
+}
+    
+

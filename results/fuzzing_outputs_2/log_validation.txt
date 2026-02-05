@@ -1,0 +1,673 @@
+[TRACE] Validating outputs/fuzzing_outputs/0.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/0.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/1.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/1.fuzz failed validation with error message: outputs/fuzzing_outputs/1.fuzz: In function ‘perform_action’:
+outputs/fuzzing_outputs/1.fuzz:6:9: warning: implicit declaration of function ‘strcmp’ [-Wimplicit-function-declaration]
+    6 |     if (strcmp(action, "quit") == 0) {
+      |         ^~~~~~
+outputs/fuzzing_outputs/1.fuzz:11:9: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+   11 |         printf("This is a message.\n");
+      |         ^~~~~~
+outputs/fuzzing_outputs/1.fuzz:11:9: warning: incompatible implicit declaration of built-in function ‘printf’
+outputs/fuzzing_outputs/1.fuzz:2:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+    1 | #include <stdlib.h>
+  +++ |+#include <stdio.h>
+    2 | 
+outputs/fuzzing_outputs/1.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/1.fuzz:24:9: warning: incompatible implicit declaration of built-in function ‘printf’
+   24 |         printf("Enter action (quit, show, or other): ");
+      |         ^~~~~~
+outputs/fuzzing_outputs/1.fuzz:24:9: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+outputs/fuzzing_outputs/1.fuzz:25:9: warning: implicit declaration of function ‘scanf’ [-Wimplicit-function-declaration]
+   25 |         scanf("%s", action);
+      |         ^~~~~
+outputs/fuzzing_outputs/1.fuzz:25:9: warning: incompatible implicit declaration of built-in function ‘scanf’
+outputs/fuzzing_outputs/1.fuzz:25:9: note: include ‘<stdio.h>’ or provide a declaration of ‘scanf’
+outputs/fuzzing_outputs/1.fuzz: At top level:
+outputs/fuzzing_outputs/1.fuzz:35:1: error: expected identifier or ‘(’ before ‘}’ token
+   35 | }
+      | ^
+
+[TRACE] Validating outputs/fuzzing_outputs/2.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/2.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/3.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/3.fuzz failed validation with error message: outputs/fuzzing_outputs/3.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/3.fuzz:6:9: warning: implicit declaration of function ‘fprintf’ [-Wimplicit-function-declaration]
+    6 |         fprintf(stderr, "Usage: %s <num>\n", argv[0]);
+      |         ^~~~~~~
+outputs/fuzzing_outputs/3.fuzz:6:9: warning: incompatible implicit declaration of built-in function ‘fprintf’
+outputs/fuzzing_outputs/3.fuzz:2:1: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
+    1 | #include <stdlib.h>
+  +++ |+#include <stdio.h>
+    2 | 
+outputs/fuzzing_outputs/3.fuzz:6:17: error: ‘stderr’ undeclared (first use in this function)
+    6 |         fprintf(stderr, "Usage: %s <num>\n", argv[0]);
+      |                 ^~~~~~
+outputs/fuzzing_outputs/3.fuzz:6:17: note: ‘stderr’ is defined in header ‘<stdio.h>’; did you forget to ‘#include <stdio.h>’?
+outputs/fuzzing_outputs/3.fuzz:6:17: note: each undeclared identifier is reported only once for each function it appears in
+outputs/fuzzing_outputs/3.fuzz:12:9: warning: incompatible implicit declaration of built-in function ‘fprintf’
+   12 |         fprintf(stderr, "Error: Invalid input. Enter a positive integer.\n");
+      |         ^~~~~~~
+outputs/fuzzing_outputs/3.fuzz:12:9: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
+outputs/fuzzing_outputs/3.fuzz:23:5: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+   23 |     printf("Sum of even numbers from 1 to %d: %d\n", num, sum);
+      |     ^~~~~~
+outputs/fuzzing_outputs/3.fuzz:23:5: warning: incompatible implicit declaration of built-in function ‘printf’
+outputs/fuzzing_outputs/3.fuzz:23:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+
+[TRACE] Validating outputs/fuzzing_outputs/4.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/4.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/5.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/5.fuzz failed validation with error message: outputs/fuzzing_outputs/5.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/5.fuzz:61:9: error: break statement not within loop or switch
+   61 |         break;
+      |         ^~~~~
+outputs/fuzzing_outputs/5.fuzz:92:9: error: break statement not within loop or switch
+   92 |         break;
+      |         ^~~~~
+outputs/fuzzing_outputs/5.fuzz:115:9: error: break statement not within loop or switch
+  115 |         break;
+      |         ^~~~~
+outputs/fuzzing_outputs/5.fuzz:129:9: error: expected declaration or statement at end of input
+  129 |         num++;
+      |         ^~~
+outputs/fuzzing_outputs/5.fuzz:129:9: error: expected declaration or statement at end of input
+
+[TRACE] Validating outputs/fuzzing_outputs/6.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/6.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/7.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/7.fuzz failed validation with error message: outputs/fuzzing_outputs/7.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/7.fuzz:9:9: warning: implicit declaration of function ‘fprintf’ [-Wimplicit-function-declaration]
+    9 |         fprintf(stderr, "usage: myprogram <num> <num> <operation> (add | sub | mul | div)\n");
+      |         ^~~~~~~
+outputs/fuzzing_outputs/7.fuzz:9:9: warning: incompatible implicit declaration of built-in function ‘fprintf’
+outputs/fuzzing_outputs/7.fuzz:2:1: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
+    1 | #include <stdlib.h>
+  +++ |+#include <stdio.h>
+    2 | 
+outputs/fuzzing_outputs/7.fuzz:9:17: error: ‘stderr’ undeclared (first use in this function)
+    9 |         fprintf(stderr, "usage: myprogram <num> <num> <operation> (add | sub | mul | div)\n");
+      |                 ^~~~~~
+outputs/fuzzing_outputs/7.fuzz:9:17: note: ‘stderr’ is defined in header ‘<stdio.h>’; did you forget to ‘#include <stdio.h>’?
+outputs/fuzzing_outputs/7.fuzz:9:17: note: each undeclared identifier is reported only once for each function it appears in
+outputs/fuzzing_outputs/7.fuzz:16:9: warning: implicit declaration of function ‘strcmp’ [-Wimplicit-function-declaration]
+   16 |     if (strcmp(operation, "add") == 0)
+      |         ^~~~~~
+outputs/fuzzing_outputs/7.fuzz:18:9: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+   18 |         printf("%d\n", num1 + num2);
+      |         ^~~~~~
+outputs/fuzzing_outputs/7.fuzz:18:9: warning: incompatible implicit declaration of built-in function ‘printf’
+outputs/fuzzing_outputs/7.fuzz:18:9: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+outputs/fuzzing_outputs/7.fuzz:22:9: warning: incompatible implicit declaration of built-in function ‘printf’
+   22 |         printf("%d\n", num1 - num2);
+      |         ^~~~~~
+outputs/fuzzing_outputs/7.fuzz:22:9: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+outputs/fuzzing_outputs/7.fuzz:26:9: warning: incompatible implicit declaration of built-in function ‘printf’
+   26 |         printf("%d\n", num1 * num2);
+      |         ^~~~~~
+outputs/fuzzing_outputs/7.fuzz:26:9: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+outputs/fuzzing_outputs/7.fuzz:32:13: warning: incompatible implicit declaration of built-in function ‘fprintf’
+   32 |             fprintf(stderr, "Error: division by zero\n");
+      |             ^~~~~~~
+outputs/fuzzing_outputs/7.fuzz:32:13: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
+outputs/fuzzing_outputs/7.fuzz:35:9: warning: incompatible implicit declaration of built-in function ‘printf’
+   35 |         printf("%d\n", num1 / num2);
+      |         ^~~~~~
+outputs/fuzzing_outputs/7.fuzz:35:9: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+outputs/fuzzing_outputs/7.fuzz:39:9: warning: incompatible implicit declaration of built-in function ‘fprintf’
+   39 |         fprintf(stderr, "Error: invalid operation\n");
+      |         ^~~~~~~
+outputs/fuzzing_outputs/7.fuzz:39:9: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
+
+[TRACE] Validating outputs/fuzzing_outputs/8.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/8.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/9.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/9.fuzz failed validation with error message: outputs/fuzzing_outputs/9.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/9.fuzz:14:13: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+   14 |             printf("Sum: %d", sum);
+      |             ^~~~~~
+outputs/fuzzing_outputs/9.fuzz:14:13: warning: incompatible implicit declaration of built-in function ‘printf’
+outputs/fuzzing_outputs/9.fuzz:2:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+    1 | #include <stdlib.h>
+  +++ |+#include <stdio.h>
+    2 | 
+outputs/fuzzing_outputs/9.fuzz:32:9: error: break statement not within loop or switch
+   32 |         break;
+      |         ^~~~~
+outputs/fuzzing_outputs/9.fuzz:35:9: warning: incompatible implicit declaration of built-in function ‘printf’
+   35 |         printf("Message: %s", message);
+      |         ^~~~~~
+outputs/fuzzing_outputs/9.fuzz:35:9: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+outputs/fuzzing_outputs/9.fuzz:37:9: error: continue statement not within a loop
+   37 |         continue;
+      |         ^~~~~~~~
+outputs/fuzzing_outputs/9.fuzz:45:5: warning: incompatible implicit declaration of built-in function ‘printf’
+   45 |     printf("End of program");
+      |     ^~~~~~
+outputs/fuzzing_outputs/9.fuzz:45:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+outputs/fuzzing_outputs/9.fuzz: At top level:
+outputs/fuzzing_outputs/9.fuzz:52:5: error: redefinition of ‘main’
+   52 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/9.fuzz:4:5: note: previous definition of ‘main’ was here
+    4 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/9.fuzz:80:2: error: expected identifier or ‘(’ before ‘/’ token
+   80 | */
+      |  ^
+
+[TRACE] Validating outputs/fuzzing_outputs/10.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/10.fuzz failed validation with error message: outputs/fuzzing_outputs/10.fuzz:34:5: error: redefinition of ‘main’
+   34 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/10.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/10.fuzz:65:5: error: redefinition of ‘main’
+   65 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/10.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/10.fuzz:93:1: error: unterminated comment
+   93 | /* Please specify the format: The
+      | ^
+
+[TRACE] Validating outputs/fuzzing_outputs/11.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/11.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/12.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/12.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/13.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/13.fuzz failed validation with error message: outputs/fuzzing_outputs/13.fuzz:32:1: error: stray ‘`’ in program
+   32 | ```
+      | ^
+outputs/fuzzing_outputs/13.fuzz:32:2: error: stray ‘`’ in program
+   32 | ```
+      |  ^
+outputs/fuzzing_outputs/13.fuzz:32:3: error: stray ‘`’ in program
+   32 | ```
+      |   ^
+
+[TRACE] Validating outputs/fuzzing_outputs/14.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/14.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/15.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/15.fuzz failed validation with error message: outputs/fuzzing_outputs/15.fuzz:29:5: error: redefinition of ‘main’
+   29 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/15.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/15.fuzz:49:5: error: redefinition of ‘main’
+   49 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/15.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/15.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/15.fuzz:96:22: error: expected ‘;’ at end of input
+   96 |                 y = 0
+      |                      ^
+      |                      ;
+outputs/fuzzing_outputs/15.fuzz:96:17: error: expected declaration or statement at end of input
+   96 |                 y = 0
+      |                 ^
+outputs/fuzzing_outputs/15.fuzz:96:17: error: expected declaration or statement at end of input
+outputs/fuzzing_outputs/15.fuzz:96:17: error: expected declaration or statement at end of input
+outputs/fuzzing_outputs/15.fuzz:96:17: error: expected declaration or statement at end of input
+
+[TRACE] Validating outputs/fuzzing_outputs/16.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/16.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/17.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/17.fuzz failed validation with error message: outputs/fuzzing_outputs/17.fuzz:24:5: error: redefinition of ‘main’
+   24 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/17.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/17.fuzz:42:5: error: redefinition of ‘main’
+   42 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/17.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+
+[TRACE] Validating outputs/fuzzing_outputs/18.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/18.fuzz failed validation with error message: outputs/fuzzing_outputs/18.fuzz:37:5: error: redefinition of ‘main’
+   37 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/18.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/18.fuzz:68:5: error: redefinition of ‘main’
+   68 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/18.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/18.fuzz:86:5: error: redefinition of ‘main’
+   86 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/18.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/18.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/18.fuzz:94:21: error: expected declaration or statement at end of input
+   94 |                     while (1);
+      |                     ^~~~~
+outputs/fuzzing_outputs/18.fuzz:94:21: error: expected declaration or statement at end of input
+outputs/fuzzing_outputs/18.fuzz:94:21: error: expected declaration or statement at end of input
+outputs/fuzzing_outputs/18.fuzz:94:21: error: expected declaration or statement at end of input
+outputs/fuzzing_outputs/18.fuzz:94:21: error: expected declaration or statement at end of input
+
+[TRACE] Validating outputs/fuzzing_outputs/19.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/19.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/20.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/20.fuzz failed validation with error message: outputs/fuzzing_outputs/20.fuzz:31:14: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   31 |     next_step:
+      |              ^
+outputs/fuzzing_outputs/20.fuzz:33:5: error: expected identifier or ‘(’ before ‘return’
+   33 |     return 0;
+      |     ^~~~~~
+outputs/fuzzing_outputs/20.fuzz:34:11: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   34 | error_exit:
+      |           ^
+outputs/fuzzing_outputs/20.fuzz:36:5: error: expected identifier or ‘(’ before ‘return’
+   36 |     return 1;
+      |     ^~~~~~
+outputs/fuzzing_outputs/20.fuzz:37:14: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   37 | infinite_loop:
+      |              ^
+outputs/fuzzing_outputs/20.fuzz:39:5: error: expected identifier or ‘(’ before ‘while’
+   39 |     while (1);
+      |     ^~~~~
+outputs/fuzzing_outputs/20.fuzz:40:1: error: expected identifier or ‘(’ before ‘}’ token
+   40 | }
+      | ^
+outputs/fuzzing_outputs/20.fuzz:41:1: error: stray ‘`’ in program
+   41 | ```
+      | ^
+outputs/fuzzing_outputs/20.fuzz:41:2: error: stray ‘`’ in program
+   41 | ```
+      |  ^
+outputs/fuzzing_outputs/20.fuzz:41:3: error: stray ‘`’ in program
+   41 | ```
+      |   ^
+
+[TRACE] Validating outputs/fuzzing_outputs/21.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/21.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/22.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/22.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/23.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/23.fuzz failed validation with error message: outputs/fuzzing_outputs/23.fuzz:32:1: error: unterminated comment
+   32 | /*
+      | ^
+
+[TRACE] Validating outputs/fuzzing_outputs/24.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/24.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/25.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/25.fuzz failed validation with error message: outputs/fuzzing_outputs/25.fuzz:31:1: error: stray ‘`’ in program
+   31 | ```
+      | ^
+outputs/fuzzing_outputs/25.fuzz:31:2: error: stray ‘`’ in program
+   31 | ```
+      |  ^
+outputs/fuzzing_outputs/25.fuzz:31:3: error: stray ‘`’ in program
+   31 | ```
+      |   ^
+outputs/fuzzing_outputs/25.fuzz:32:3: error: invalid preprocessing directive #`
+   32 | # `6_output`
+      |   ^
+outputs/fuzzing_outputs/25.fuzz:33:1: error: stray ‘`’ in program
+   33 | ```
+      | ^
+outputs/fuzzing_outputs/25.fuzz:33:2: error: stray ‘`’ in program
+   33 | ```
+      |  ^
+outputs/fuzzing_outputs/25.fuzz:33:3: error: stray ‘`’ in program
+   33 | ```
+      |   ^
+outputs/fuzzing_outputs/25.fuzz:34:1: error: unknown type name ‘Next’
+   34 | Next step: 4
+      | ^~~~
+outputs/fuzzing_outputs/25.fuzz:34:10: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   34 | Next step: 4
+      |          ^
+outputs/fuzzing_outputs/25.fuzz:35:1: error: stray ‘`’ in program
+   35 | ```
+      | ^
+outputs/fuzzing_outputs/25.fuzz:35:2: error: stray ‘`’ in program
+   35 | ```
+      |  ^
+outputs/fuzzing_outputs/25.fuzz:35:3: error: stray ‘`’ in program
+   35 | ```
+      |   ^
+outputs/fuzzing_outputs/25.fuzz:36:3: error: invalid preprocessing directive #`
+   36 | # `7`
+      |   ^
+
+[TRACE] Validating outputs/fuzzing_outputs/26.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/26.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/27.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/27.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/28.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/28.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/29.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/29.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/30.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/30.fuzz failed validation with error message: outputs/fuzzing_outputs/30.fuzz:31:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘++’ token
+   31 |     x++;
+      |      ^~
+outputs/fuzzing_outputs/30.fuzz:32:5: error: expected identifier or ‘(’ before ‘if’
+   32 |     if (x > 4) {
+      |     ^~
+outputs/fuzzing_outputs/30.fuzz:36:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘++’ token
+   36 |     y++;
+      |      ^~
+outputs/fuzzing_outputs/30.fuzz:37:4: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   37 | end:
+      |    ^
+outputs/fuzzing_outputs/30.fuzz:39:5: error: expected identifier or ‘(’ before ‘return’
+   39 |     return 0;
+      |     ^~~~~~
+outputs/fuzzing_outputs/30.fuzz:40:1: error: expected identifier or ‘(’ before ‘}’ token
+   40 | }
+      | ^
+outputs/fuzzing_outputs/30.fuzz:47:1: error: stray ‘`’ in program
+   47 | ```
+      | ^
+outputs/fuzzing_outputs/30.fuzz:47:2: error: stray ‘`’ in program
+   47 | ```
+      |  ^
+outputs/fuzzing_outputs/30.fuzz:47:3: error: stray ‘`’ in program
+   47 | ```
+      |   ^
+outputs/fuzzing_outputs/30.fuzz:48:1: error: stray ‘##’ in program
+   48 | ## C#
+      | ^~
+outputs/fuzzing_outputs/30.fuzz:48:5: error: stray ‘#’ in program
+   48 | ## C#
+      |     ^
+outputs/fuzzing_outputs/30.fuzz:50:1: error: stray ‘`’ in program
+   50 | ```csharp
+      | ^
+outputs/fuzzing_outputs/30.fuzz:50:2: error: stray ‘`’ in program
+   50 | ```csharp
+      |  ^
+outputs/fuzzing_outputs/30.fuzz:50:3: error: stray ‘`’ in program
+   50 | ```csharp
+      |   ^
+outputs/fuzzing_outputs/30.fuzz:48:4: error: unknown type name ‘C’
+   48 | ## C#
+      |    ^
+outputs/fuzzing_outputs/30.fuzz:51:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘using’
+   51 | using System;
+      | ^~~~~
+outputs/fuzzing_outputs/30.fuzz:51:1: error: unknown type name ‘using’
+outputs/fuzzing_outputs/30.fuzz:52:1: error: unknown type name ‘namespace’
+   52 | namespace HelloWorld
+      | ^~~~~~~~~
+outputs/fuzzing_outputs/30.fuzz:53:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   53 | {
+      | ^
+outputs/fuzzing_outputs/30.fuzz:97:1: error: stray ‘`’ in program
+   97 | ```
+      | ^
+outputs/fuzzing_outputs/30.fuzz:97:2: error: stray ‘`’ in program
+   97 | ```
+      |  ^
+outputs/fuzzing_outputs/30.fuzz:97:3: error: stray ‘`’ in program
+   97 | ```
+      |   ^
+outputs/fuzzing_outputs/30.fuzz:98:1: error: stray ‘##’ in program
+   98 | ## PHP
+      | ^~
+outputs/fuzzing_outputs/30.fuzz:100:1: error: stray ‘`’ in program
+  100 | ```php
+      | ^
+outputs/fuzzing_outputs/30.fuzz:100:2: error: stray ‘`’ in program
+  100 | ```php
+      |  ^
+outputs/fuzzing_outputs/30.fuzz:100:3: error: stray ‘`’ in program
+  100 | ```php
+      |   ^
+outputs/fuzzing_outputs/30.fuzz:98:4: error: unknown type name ‘PHP’
+   98 | ## PHP
+      |    ^~~
+outputs/fuzzing_outputs/30.fuzz:101:3: error: invalid preprocessing directive #Start
+  101 | # Start of the complex logic */
+      |   ^~~~~
+outputs/fuzzing_outputs/30.fuzz:102:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘if’
+  102 | if (x == 2) {
+      | ^~
+outputs/fuzzing_outputs/30.fuzz:113:3: error: invalid preprocessing directive #End
+  113 | # End of the complex logic */
+      |   ^~~
+outputs/fuzzing_outputs/30.fuzz:114:2: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘++’ token
+  114 | y++;
+      |  ^~
+
+[TRACE] Validating outputs/fuzzing_outputs/31.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/31.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/32.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/32.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/33.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/33.fuzz failed validation with error message: outputs/fuzzing_outputs/33.fuzz:35:5: error: redefinition of ‘main’
+   35 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/33.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+
+[TRACE] Validating outputs/fuzzing_outputs/34.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/34.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/35.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/35.fuzz failed validation with error message: outputs/fuzzing_outputs/35.fuzz:33:1: error: unknown type name ‘This’
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      | ^~~~
+outputs/fuzzing_outputs/35.fuzz:33:11: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘is’
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |           ^~
+outputs/fuzzing_outputs/35.fuzz:33:11: error: unknown type name ‘is’
+outputs/fuzzing_outputs/35.fuzz:33:55: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                       ^
+outputs/fuzzing_outputs/35.fuzz:33:60: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                            ^
+outputs/fuzzing_outputs/35.fuzz:33:147: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                   ^
+outputs/fuzzing_outputs/35.fuzz:33:149: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                     ^
+outputs/fuzzing_outputs/35.fuzz:33:155: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                           ^
+outputs/fuzzing_outputs/35.fuzz:33:157: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                             ^
+outputs/fuzzing_outputs/35.fuzz:33:200: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                        ^
+outputs/fuzzing_outputs/35.fuzz:33:202: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                          ^
+outputs/fuzzing_outputs/35.fuzz:33:215: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                       ^
+outputs/fuzzing_outputs/35.fuzz:33:217: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                         ^
+outputs/fuzzing_outputs/35.fuzz:33:233: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                         ^
+outputs/fuzzing_outputs/35.fuzz:33:235: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                           ^
+outputs/fuzzing_outputs/35.fuzz:33:281: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                         ^
+outputs/fuzzing_outputs/35.fuzz:33:283: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                           ^
+outputs/fuzzing_outputs/35.fuzz:33:289: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                 ^
+outputs/fuzzing_outputs/35.fuzz:33:291: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                   ^
+outputs/fuzzing_outputs/35.fuzz:33:330: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                          ^
+outputs/fuzzing_outputs/35.fuzz:33:341: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                     ^
+outputs/fuzzing_outputs/35.fuzz:33:353: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                 ^
+outputs/fuzzing_outputs/35.fuzz:33:355: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                   ^
+outputs/fuzzing_outputs/35.fuzz:33:394: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                          ^
+outputs/fuzzing_outputs/35.fuzz:33:406: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+outputs/fuzzing_outputs/35.fuzz:33:418: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+outputs/fuzzing_outputs/35.fuzz:33:420: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                    ^
+outputs/fuzzing_outputs/35.fuzz:33:459: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^
+outputs/fuzzing_outputs/35.fuzz:33:474: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+outputs/fuzzing_outputs/35.fuzz:33:486: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+outputs/fuzzing_outputs/35.fuzz:33:488: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ^
+outputs/fuzzing_outputs/35.fuzz:33:538: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+outputs/fuzzing_outputs/35.fuzz:33:540: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^
+outputs/fuzzing_outputs/35.fuzz:33:564: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ^
+outputs/fuzzing_outputs/35.fuzz:33:576: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+outputs/fuzzing_outputs/35.fuzz:33:595: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+outputs/fuzzing_outputs/35.fuzz:33:606: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^
+outputs/fuzzing_outputs/35.fuzz:33:673: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+outputs/fuzzing_outputs/35.fuzz:33:685: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^
+outputs/fuzzing_outputs/35.fuzz:33:770: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+outputs/fuzzing_outputs/35.fuzz:33:785: error: stray ‘`’ in program
+   33 | This code is supposed to demonstrate complex usage of `goto` statements for control flow, error handling, and nested loops. It sets the values of `x` and `y` to 0, then enters a loop that increments `x` by 1 until `x` reaches 4. If `x` is equal to 4, the code checks the value of `y`. If `y` is equal to 5, the code jumps to the `next_step:` label. If `y` is equal to 6, the code jumps to the `error_exit:` label. If `y` is equal to 2, the code jumps to the `infinite_loop:` label. If `y` is not equal to 5, 6, or 2, the code decrements `x` by 1 and jumps to the `error_exit:` label. After the `next_step:` label, the code prints "Next step: `x`" and returns 0. After the `error_exit:` label, the code prints "Error: Invalid `x` or `y` value." and returns 1. After the `infinite_loop:` label, the code enters an infinite loop that prints "Infinite loop!" repeatedly.
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+
+[TRACE] Validating outputs/fuzzing_outputs/36.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/36.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/37.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/37.fuzz failed validation with error message: outputs/fuzzing_outputs/37.fuzz:37:5: error: redefinition of ‘main’
+   37 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/37.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/37.fuzz:68:5: error: redefinition of ‘main’
+   68 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/37.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/37.fuzz:96:1: error: unterminated comment
+   96 | /* Please
+      | ^
+
+[TRACE] Validating outputs/fuzzing_outputs/38.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/38.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/39.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/39.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/40.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/40.fuzz failed validation with error message: outputs/fuzzing_outputs/40.fuzz:34:5: error: redefinition of ‘main’
+   34 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/40.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/40.fuzz:65:5: error: redefinition of ‘main’
+   65 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/40.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/40.fuzz:96:5: error: expected identifier or ‘(’ before ‘return’
+   96 |     return 0;
+      |     ^~~~~~
+outputs/fuzzing_outputs/40.fuzz:97:1: error: expected identifier or ‘(’ before ‘}’ token
+   97 | }
+      | ^
+outputs/fuzzing_outputs/40.fuzz:98:2: error: expected identifier or ‘(’ before ‘/’ token
+   98 | */
+      |  ^
+
+[TRACE] Validating outputs/fuzzing_outputs/41.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/41.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/42.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/42.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/43.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/43.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/44.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/44.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/45.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/45.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/46.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/46.fuzz is safe
+[TRACE] Validating outputs/fuzzing_outputs/47.fuzz ...
+[VERBOSE] outputs/fuzzing_outputs/47.fuzz failed validation with error message: outputs/fuzzing_outputs/47.fuzz:34:5: error: redefinition of ‘main’
+   34 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/47.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/47.fuzz:71:5: error: redefinition of ‘main’
+   71 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/47.fuzz:3:5: note: previous definition of ‘main’ was here
+    3 | int main() {
+      |     ^~~~
+outputs/fuzzing_outputs/47.fuzz: In function ‘main’:
+outputs/fuzzing_outputs/47.fuzz:94:9: error: ‘infinite’ undeclared (first use in this function)
+   94 |         infinite
+      |         ^~~~~~~~
+outputs/fuzzing_outputs/47.fuzz:94:9: note: each undeclared identifier is reported only once for each function it appears in
+outputs/fuzzing_outputs/47.fuzz:94:17: error: expected ‘;’ at end of input
+   94 |         infinite
+      |                 ^
+      |                 ;
+outputs/fuzzing_outputs/47.fuzz:94:9: error: expected declaration or statement at end of input
+   94 |         infinite
+      |         ^~~~~~~~
+outputs/fuzzing_outputs/47.fuzz:94:9: error: expected declaration or statement at end of input
+outputs/fuzzing_outputs/47.fuzz:82:17: error: label ‘infinite_loop’ used but not defined
+   82 |                 goto infinite_loop;
+      |                 ^~~~
+
